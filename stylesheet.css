@@ -1,0 +1,225 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #1772d0;
+    --hover-color: #f09228;
+    --text-color: #333;
+    --bg-color: #fff;
+    --highlight-bg: #ffffd0;
+    --max-width: 880px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+    color: var(--hover-color);
+}
+
+/* Layout Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.profile-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.profile-name {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.profile-links {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-links a {
+    margin: 0 10px;
+}
+
+.profile-photo {
+    width: 140px; 
+    flex-shrink: 0;
+}
+
+.profile-pic {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Force square aspect ratio */
+    object-fit: cover;   /* Crop to cover ensuring no distortion */
+    border-radius: 50%;  /* Make it circular */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+/* Headings */
+h2 {
+    font-size: 22px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* Publications */
+.pub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.pub-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Card shadow */
+    margin-bottom: 8px; /* Spacing between cards */
+}
+
+.pub-item.highlight {
+    background-color: var(--highlight-bg);
+}
+
+.pub-visual {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.pub-visual video, 
+.pub-visual img {
+    width: 100%;
+    /* aspect-ratio: 16 / 9; */ /* Removed to prevent cropping */
+    /* object-fit: cover; */    /* Removed to prevent cropping */
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    display: block;
+}
+
+.pub-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.paper-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    display: block;
+    color: var(--text-color);
+}
+
+.paper-title:hover {
+    color: var(--primary-color);
+}
+
+.pub-authors,
+.pub-venue,
+.pub-links,
+.pub-notes {
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.pub-links a {
+    margin-right: 10px;
+}
+
+/* Decorations */
+.diamond {
+    font-size: 12px;
+    vertical-align: super;
+    font-weight: bold;
+    margin-left: 2px;
+}
+.diamond.blue { color: #1772d0; }
+.diamond.red { color: #FF4040; }
+.diamond.yellow { color: #FFD700; }
+
+.tag-spotlight { color: #FF0000; font-weight: bold; }
+.tag-oral { color: #FF0000; font-weight: bold; }
+.tag-award { color: #FF0000; font-weight: bold; }
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .profile {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .profile-text {
+        min-width: 100%;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        margin: 0 auto;
+    }
+
+    .pub-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .pub-visual {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .pub-content {
+        text-align: left;
+    }
+}
