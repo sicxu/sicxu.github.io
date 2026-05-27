@@ -68,7 +68,25 @@
 
             <div class="pub-item">
               <div class="pub-visual">
-                  <img src="assets/figures/25_arxiv_trellis2.jpg" alt="Trellis.2">
+                  <img src="assets/figures/26_cvpr_talkingavatar.jpg" alt="Talking Portrait">
+              </div>
+                <div class="pub-content">
+                    <span class="paper-title">Real-Time Generation of Streamable Talking Portrait Video with Reference-Guided Deep Compression VAEs </span>
+                    <div class="pub-authors">
+                        <strong>Sicheng Xu</strong>, Yu Deng, Shoukang Hu, Yichuan Wang, Yizhong Zhang, Zhan Chen, Jiaolong Yang, Baining Guo
+                    </div>
+                    <div class="pub-info">
+                        <a href="assets/paper_assets/26_cvpr_talkingavatar/paper.pdf">[PDF]</a>
+                        <a href="#" class="pip-link" data-video="assets/paper_assets/26_cvpr_talkingavatar/1.Talking_Portrait_Video_Results(Short).mp4">[▶ Short]</a>
+                        <a href="#" class="pip-link" data-video="assets/paper_assets/26_cvpr_talkingavatar/2.Talking_Portrait_Video_Results(Long).mp4">[▶ Long]</a>
+                        <em>CVPR 2026, <span class="tag-spotlight">Highlight</span></em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+              <div class="pub-visual">
+                  <img src="assets/figures/26_cvpr_trellis2.jpg" alt="Trellis.2">
               </div>
                 <div class="pub-content">
                     <span class="paper-title">Native and Compact Structured Latents for 3D Generation </span>
@@ -79,6 +97,29 @@
                         <a href="https://arxiv.org/pdf/2512.14692">[PDF]</a>
                         <a href="https://microsoft.github.io/TRELLIS.2/">[Project]</a>
                         <a href="https://github.com/microsoft/TRELLIS.2">[Code]</a>
+                        <em>CVPR 2026, <span class="tag-oral">Oral</span></em>
+                    </div>
+                    <div class="pub-notes">
+                        <sup>+</sup>: Intern at MSRA.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-item">
+              <div class="pub-visual">
+                  <img src="assets/figures/26_cvpr_HiSpatial.jpg" alt="HiSpatial">
+              </div>
+                <div class="pub-content">
+                    <span class="paper-title">HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models </span>
+                    <div class="pub-authors">
+                        Huizhi Liang<sup>+</sup>, Yichao Shen<sup>+</sup>, Yu Deng, <strong>Sicheng Xu</strong>, Zhiyuan Feng, Tong Zhang, Yaobo Liang, Jiaolong Yang
+                    </div>
+                    <div class="pub-info">
+                        <a href="https://arxiv.org/abs/2603.25411">[PDF]</a>
+                        <a href="https://microsoft.github.io/HiSpatial/">[Project]</a>
+                        <a href="https://github.com/microsoft/HiSpatial">[Code]</a>
+                        <a href="https://huggingface.co/datasets/lhzzzzzy/HiSpatial-Data">[Dataset]</a>
+                        <em>CVPR 2026</em>
                     </div>
                     <div class="pub-notes">
                         <sup>+</sup>: Intern at MSRA.
@@ -265,7 +306,6 @@
                         <!-- <em>Arxiv</em> -->
                     </div>
                     <div class="pub-notes">
-                        *: Equal contributions.
                     </div>
                 </div>
             </div>
@@ -371,6 +411,36 @@
     </footer>
 
 </div>
+
+<!-- Video Modal Overlay -->
+<div id="pip-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:1000; background:rgba(0,0,0,0.7); display:none; align-items:center; justify-content:center;" onclick="if(event.target===this)closePip()">
+    <div style="position:relative; width:70%; max-width:900px; border-radius:10px; overflow:hidden; box-shadow:0 10px 40px rgba(0,0,0,0.5);">
+        <button onclick="closePip()" style="position:absolute; top:8px; right:10px; background:rgba(0,0,0,0.5); border:none; color:#fff; font-size:20px; cursor:pointer; border-radius:50%; width:32px; height:32px; z-index:1;">&times;</button>
+        <video id="pip-video" controls style="width:100%; display:block;"></video>
+    </div>
+</div>
+
+<script>
+function closePip() {
+    const overlay = document.getElementById('pip-overlay');
+    const video = document.getElementById('pip-video');
+    video.pause();
+    video.src = '';
+    overlay.style.display = 'none';
+}
+
+document.querySelectorAll('.pip-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const src = link.dataset.video;
+        const overlay = document.getElementById('pip-overlay');
+        const video = document.getElementById('pip-video');
+        video.src = src;
+        overlay.style.display = 'flex';
+        video.play();
+    });
+});
+</script>
 
 </body>
 </html>
