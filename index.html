@@ -64,9 +64,36 @@
     <!-- Publications Section -->
     <section class="publications">
         <h2>Publications</h2>
+        <div class="pub-filters" role="group" aria-label="Filter publications by research area">
+            <button class="pub-filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="pub-filter" type="button" data-filter="3d-vision" aria-pressed="false">3D Vision</button>
+            <button class="pub-filter" type="button" data-filter="digital-human" aria-pressed="false">Digital Human</button>
+            <button class="pub-filter" type="button" data-filter="embodied-ai" aria-pressed="false">Embodied AI</button>
+        </div>
         <div class="pub-list">
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="3d-vision">
+              <div class="pub-visual">
+                  <img src="assets/figures/26_arxiv_moge3.jpg" alt="MoGe-3">
+              </div>
+                <div class="pub-content">
+                    <span class="paper-title">MoGe-3: Fine-Detail Monocular Geometry Estimation with Self-Guided Sparse Volumetric Refinement </span>
+                    <div class="pub-authors">
+                        Lingyu Kong*<sup>+</sup>, Ruicheng Li*<sup>+</sup>, Ruicheng Wang*<sup>+</sup>, <strong>Sicheng Xu</strong>, Chengtang Yao, Jianfeng Xiang<sup>+</sup>, Jiaolong Yang
+                    </div>
+                    <div class="pub-info">
+                        <a href="https://arxiv.org/abs/2607.17967">[PDF]</a>
+                        <a href="https://qft-333.github.io/moge3page/">[Project]</a>
+                        <a href="https://github.com/microsoft/MoGe">[Code]</a>
+                        <em>arXiv 2026</em>
+                    </div>
+                    <div class="pub-notes">
+                        *: Equal contributions. <sup>+</sup>: Intern at MSRA.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-item" data-category="digital-human">
               <div class="pub-visual">
                   <img src="assets/figures/26_cvpr_talkingavatar.jpg" alt="Talking Portrait">
               </div>
@@ -84,7 +111,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="3d-vision">
               <div class="pub-visual">
                   <img src="assets/figures/26_cvpr_trellis2.jpg" alt="Trellis.2">
               </div>
@@ -105,7 +132,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="3d-vision embodied-ai">
               <div class="pub-visual">
                   <img src="assets/figures/26_cvpr_HiSpatial.jpg" alt="HiSpatial">
               </div>
@@ -127,7 +154,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="embodied-ai">
               <div class="pub-visual">
                   <img src="assets/figures/26_iclr_mvrobobench.jpg" alt="mvrobobench">
               </div>
@@ -144,7 +171,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="embodied-ai">
               <div class="pub-visual">
                   <img src="assets/figures/26_icra_vitra.jpg" alt="VITRA">
               </div>
@@ -162,7 +189,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="digital-human">
               <div class="pub-visual">
                   <img src="assets/figures/25_neurips_vasa3d.jpg" alt="VASA-3D">
               </div>
@@ -182,7 +209,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="3d-vision">
               <div class="pub-visual">
                   <img src="assets/figures/25_neurips_moge2.jpg" alt="MoGe2">
               </div>
@@ -203,7 +230,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="3d-vision">
               <div class="pub-visual">
                   <img src="assets/figures/25_iccv_gvfdiffusion.jpg" alt="GVFDiffusion">
               </div>
@@ -224,7 +251,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="digital-human">
               <div class="pub-visual">
                   <img src="assets/figures/25_vr_vasarig.jpg" alt="VASA-Rig">
               </div>
@@ -243,7 +270,7 @@
             </div>
 
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="3d-vision">
                 <!-- <div class="pub-visual">
                     <video playsinline autoplay loop preload muted>
                         <source src="assets/trellis.mp4" type="video/mp4">
@@ -269,7 +296,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="3d-vision">
                 <div class="pub-visual">
                     <img src="assets/figures/25_cvpr_moge.jpg" alt="CogACT">
                 </div>
@@ -290,7 +317,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="embodied-ai">
                 <div class="pub-visual">
                     <img src="assets/figures/24_arxiv_CogACT.jpg" alt="CogACT">
                 </div>
@@ -310,7 +337,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="digital-human">
                 <div class="pub-visual">
                     <img src="assets/figures/24_neurips_vasa1.jpg" alt="Vasa-1">
                 </div>
@@ -331,7 +358,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="digital-human">
                 <div class="pub-visual">
                     <img src="assets/figures/23_sa_aniportraitgan.jpg" alt="AniPortraitGAN">
                 </div>
@@ -352,7 +379,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="digital-human">
                 <div class="pub-visual">
                     <img src="assets/figures/20_cvpr_deep3dportrait.png" alt="Deep 3D Portrait">
                 </div>
@@ -372,7 +399,7 @@
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-item" data-category="digital-human">
                 <div class="pub-visual">
                     <img src="assets/figures/19_cvprw_3dface.png" alt="Accurate 3D Face Reconstruction">
                 </div>
@@ -438,6 +465,26 @@ document.querySelectorAll('.pip-link').forEach(link => {
         video.src = src;
         overlay.style.display = 'flex';
         video.play();
+    });
+});
+
+const publicationFilters = document.querySelectorAll('.pub-filter');
+const publications = document.querySelectorAll('.pub-item');
+
+publicationFilters.forEach(button => {
+    button.addEventListener('click', () => {
+        const selectedCategory = button.dataset.filter;
+
+        publicationFilters.forEach(filter => {
+            const isActive = filter === button;
+            filter.classList.toggle('active', isActive);
+            filter.setAttribute('aria-pressed', isActive);
+        });
+
+        publications.forEach(publication => {
+            publication.hidden = selectedCategory !== 'all'
+                && !publication.dataset.category.split(' ').includes(selectedCategory);
+        });
     });
 });
 </script>
